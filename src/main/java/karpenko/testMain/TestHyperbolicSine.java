@@ -1,38 +1,35 @@
 package karpenko.testMain;
 
 import core.main.Const;
-import karpenko.main.Cosine;
+import karpenko.main.HyperbolicCosine;
+import karpenko.main.HyperbolicSine;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.text.NumberFormat;
 
-public class TestCosine {
-
+public class TestHyperbolicSine {
     int x = 0;
-    Cosine func;
+    HyperbolicSine func;
 
     @BeforeEach
-    void setUp(){
-        func = Cosine.of(Const.of(x));
-    }
-
+    void setUp(){func = HyperbolicSine.of(Const.of(x));}
     @Test
     void testCalculate(){
         double result = func.calculate(x);
-        Assertions.assertEquals(1, result);
+        Assertions.assertEquals(0, result);
     }
 
     @Test
     void testToPrettyString(){
         String result = func.toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals(String.format("cos(%s)", x),result);
+        Assertions.assertEquals(String.format("sh(%s)", x),result);
     }
 
     @Test
     void testDerivative(){
         String result = func.derivative().toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals(String.format("(-1*sin(%s)*%s)", x, x), result);
+        Assertions.assertEquals(String.format("(ch(%s)*%s)", x, x), result);
     }
 }

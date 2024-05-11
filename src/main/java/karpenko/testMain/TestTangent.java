@@ -1,38 +1,37 @@
 package karpenko.testMain;
 
 import core.main.Const;
-import karpenko.main.Cosine;
+import karpenko.main.Tangent;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.text.NumberFormat;
 
-public class TestCosine {
+public class TestTangent {
 
     int x = 0;
-    Cosine func;
+
+    Tangent func;
 
     @BeforeEach
-    void setUp(){
-        func = Cosine.of(Const.of(x));
-    }
+    void setUp(){func = Tangent.of(Const.of(x));}
 
     @Test
     void testCalculate(){
         double result = func.calculate(x);
-        Assertions.assertEquals(1, result);
+        Assertions.assertEquals(0, result);
     }
 
     @Test
     void testToPrettyString(){
         String result = func.toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals(String.format("cos(%s)", x),result);
+        Assertions.assertEquals(String.format("tg(%s)", x), result);
     }
 
     @Test
     void testDerivative(){
         String result = func.derivative().toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals(String.format("(-1*sin(%s)*%s)", x, x), result);
+        Assertions.assertEquals(String.format("((cos(%s))^(-2)*%s)", x, x), result);
     }
 }

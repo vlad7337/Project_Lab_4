@@ -1,38 +1,38 @@
 package karpenko.testMain;
 
 import core.main.Const;
-import karpenko.main.Cosine;
+import karpenko.main.NaturalLogarithm;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.text.NumberFormat;
 
-public class TestCosine {
+public class TestNaturalLogarithm {
+    int x = 1;
 
-    int x = 0;
-    Cosine func;
+    NaturalLogarithm func;
 
     @BeforeEach
-    void setUp(){
-        func = Cosine.of(Const.of(x));
-    }
+    void setUp(){func = NaturalLogarithm.of(Const.of(x));}
 
     @Test
-    void testCalculate(){
+    void testCalcilate(){
         double result = func.calculate(x);
-        Assertions.assertEquals(1, result);
+        Assertions.assertEquals(0, result);
     }
 
     @Test
     void testToPrettyString(){
         String result = func.toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals(String.format("cos(%s)", x),result);
+        Assertions.assertEquals(String.format("ln(%s)", x), result);
     }
 
     @Test
     void testDerivative(){
         String result = func.derivative().toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals(String.format("(-1*sin(%s)*%s)", x, x), result);
+        String derivativeFunc = Const.of(x).derivative().toPrettyString(NumberFormat.getInstance());
+        Assertions.assertEquals(String.format("((%s)^(-1)*%s)", x, derivativeFunc), result);
     }
+
 }

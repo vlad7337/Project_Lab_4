@@ -17,7 +17,7 @@ public class TestNaturalLogarithm {
     void setUp(){func = NaturalLogarithm.of(Const.of(x));}
 
     @Test
-    void testCalcilate(){
+    void testCalculate(){
         double result = func.calculate(x);
         Assertions.assertEquals(0, result);
     }

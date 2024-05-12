@@ -3,7 +3,6 @@ package karpenko.testMain;
 import core.main.Const;
 import karpenko.main.Cosine;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.text.NumberFormat;
@@ -11,12 +10,7 @@ import java.text.NumberFormat;
 public class TestCosine {
 
     int x = 0;
-    Cosine func;
-
-    @BeforeEach
-    void setUp(){
-        func = Cosine.of(Const.of(x));
-    }
+    Cosine func = Cosine.of(Const.of(x));
 
     @Test
     void testCalculate(){

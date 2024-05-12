@@ -1,31 +1,31 @@
-package karpenko.testMain;
+package core.testMain;
 
-import core.main.Const;
-import karpenko.main.HyperbolicCosine;
+import core.main.Linear;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.text.NumberFormat;
 
-public class TestHyperbolicCosine {
-    int x = 0;
-    HyperbolicCosine func = HyperbolicCosine.of(Const.of(x));
+public class TestLinear {
+    int x = 1, coefficient = 2;
+
+    Linear func = Linear.of(coefficient);
 
     @Test
     void testCalculate(){
         double result = func.calculate(x);
-        Assertions.assertEquals(1, result);
+        Assertions.assertEquals(2, result);
     }
 
     @Test
     void testToPrettyString(){
         String result = func.toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals(String.format("ch(%s)", x),result);
+        Assertions.assertEquals(String.format("%s*x", coefficient), result);
     }
 
     @Test
     void testDerivative(){
         String result = func.derivative().toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals(String.format("(sh(%s)*%s)", x, x), result);
+        Assertions.assertEquals(String.format("%s", coefficient), result);
     }
 }

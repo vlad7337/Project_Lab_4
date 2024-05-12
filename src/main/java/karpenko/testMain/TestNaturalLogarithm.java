@@ -3,7 +3,6 @@ package karpenko.testMain;
 import core.main.Const;
 import karpenko.main.NaturalLogarithm;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.text.NumberFormat;
@@ -11,10 +10,7 @@ import java.text.NumberFormat;
 public class TestNaturalLogarithm {
     int x = 1;
 
-    NaturalLogarithm func;
-
-    @BeforeEach
-    void setUp(){func = NaturalLogarithm.of(Const.of(x));}
+    NaturalLogarithm func = NaturalLogarithm.of(Const.of(x));
 
     @Test
     void testCalculate(){

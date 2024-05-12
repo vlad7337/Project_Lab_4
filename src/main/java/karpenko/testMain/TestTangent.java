@@ -3,7 +3,6 @@ package karpenko.testMain;
 import core.main.Const;
 import karpenko.main.Tangent;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.text.NumberFormat;
@@ -12,10 +11,7 @@ public class TestTangent {
 
     int x = 0;
 
-    Tangent func;
-
-    @BeforeEach
-    void setUp(){func = Tangent.of(Const.of(x));}
+    Tangent func = Tangent.of(Const.of(x));
 
     @Test
     void testCalculate(){

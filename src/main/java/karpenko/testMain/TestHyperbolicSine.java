@@ -1,20 +1,16 @@
 package karpenko.testMain;
 
 import core.main.Const;
-import karpenko.main.HyperbolicCosine;
 import karpenko.main.HyperbolicSine;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.text.NumberFormat;
 
 public class TestHyperbolicSine {
     int x = 0;
-    HyperbolicSine func;
+    HyperbolicSine func = HyperbolicSine.of(Const.of(x));
 
-    @BeforeEach
-    void setUp(){func = HyperbolicSine.of(Const.of(x));}
     @Test
     void testCalculate(){
         double result = func.calculate(x);

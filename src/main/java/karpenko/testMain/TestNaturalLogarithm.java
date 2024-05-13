@@ -1,6 +1,7 @@
 package karpenko.testMain;
 
 import core.main.Const;
+import core.main.Linear;
 import karpenko.main.NaturalLogarithm;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -31,4 +32,9 @@ public class TestNaturalLogarithm {
         Assertions.assertEquals(String.format("((%s)^(-1)*%s)", x, derivativeFunc), result);
     }
 
+    @Test
+    void testNaturalLogarithmOf(){
+        Object result = NaturalLogarithm.of(Linear.X);
+        Assertions.assertInstanceOf(NaturalLogarithm.class, result);
+    }
 }

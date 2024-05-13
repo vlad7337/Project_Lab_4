@@ -31,6 +31,12 @@ public class TestConst {
     }
 
     @Test
+    void testConstOf(){
+        Object result = Const.of(x);
+        Assertions.assertInstanceOf(Const.class, result);
+    }
+
+    @Test
     void testIntValue(){
         Object result = Const.of(x).intValue();
         Assertions.assertInstanceOf(Integer.class, result);

@@ -28,4 +28,10 @@ public class TestLinear {
         String result = func.derivative().toPrettyString(NumberFormat.getInstance());
         Assertions.assertEquals(String.format("%s", coefficient), result);
     }
+
+    @Test
+    void testLinearOf(){
+        Object result = Linear.of(x);
+        Assertions.assertInstanceOf(Linear.class, result);
+    }
 }

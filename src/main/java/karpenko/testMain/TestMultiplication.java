@@ -29,4 +29,10 @@ public class TestMultiplication {
         String result = func.derivative().toPrettyString(NumberFormat.getInstance());
         Assertions.assertEquals("((1*x)+(x*1))", result);
     }
+
+    @Test
+    void testMultiplicationOf(){
+        Object result = Multiplication.of(Linear.X, Linear.X);
+        Assertions.assertInstanceOf(Multiplication.class, result);
+    }
 }

@@ -1,6 +1,7 @@
 package karpenko.testMain;
 
 import core.main.Const;
+import core.main.Linear;
 import karpenko.main.HyperbolicSine;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,12 @@ public class TestHyperbolicSine {
     void testToPrettyString(){
         String result = func.toPrettyString(NumberFormat.getInstance());
         Assertions.assertEquals(String.format("sh(%s)", x),result);
+    }
+
+    @Test
+    void testHyperbolicSineOf(){
+        Object result = HyperbolicSine.of(Linear.X);
+        Assertions.assertInstanceOf(HyperbolicSine.class, result);
     }
 
     @Test

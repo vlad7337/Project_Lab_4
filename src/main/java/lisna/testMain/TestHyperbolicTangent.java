@@ -1,10 +1,10 @@
-package lisna.main.testMain;
+package lisna.testMain;
 
 import core.main.Linear;
+import lisna.main.HyperbolicTangent;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import core.main.Const;
-import lisna.main.main.HyperbolicTangent;
 
 import java.text.NumberFormat;
 public class TestHyperbolicTangent {

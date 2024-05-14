@@ -1,4 +1,4 @@
-package lisna.main.main;
+package lisna.main;
 
 import core.main.Composite;
 import core.main.Const;

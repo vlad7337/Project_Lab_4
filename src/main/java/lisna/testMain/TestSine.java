@@ -1,10 +1,9 @@
-package lisna.main.testMain;
+package lisna.testMain;
 
 import core.main.Linear;
-import karpenko.main.Cosine;
+import lisna.main.Sine;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import lisna.main.main.Sine;
 import core.main.Const;
 
 import java.text.NumberFormat;

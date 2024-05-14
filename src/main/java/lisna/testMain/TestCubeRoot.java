@@ -1,10 +1,10 @@
-package lisna.main.testMain;
+package lisna.testMain;
 
 import core.main.Linear;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import core.main.Const;
-import lisna.main.main.CubeRoot;
+import lisna.main.CubeRoot;
 
 import java.text.NumberFormat;
 

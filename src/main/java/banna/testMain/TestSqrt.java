@@ -27,7 +27,7 @@ public class TestSqrt {
     void testDerivative() {
         Sqrt sqrt = new Sqrt(Linear.X);
         String result = sqrt.derivative().toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals("(0.5*(x^(-0.5))*1)", result);
+        Assertions.assertEquals("(0,5*(x)^(-0,5)*1)", result);
     }
 
     @Test

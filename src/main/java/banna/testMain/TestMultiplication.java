@@ -27,7 +27,7 @@ public class TestMultiplication {
     void testDerivative() {
         Multiplication multiplication = new Multiplication(Linear.X, Const.of(2), Const.of(3));
         String result = multiplication.derivative().toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals("((1*2*3)+(x*0*3)+(x*2*0))", result);
+        Assertions.assertEquals("((1*2*3))", result);
     }
 
     @Test

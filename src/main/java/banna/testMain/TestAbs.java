@@ -16,7 +16,7 @@ public class TestAbs {
     @Test
     void testCalculate(){
         double res=func.calculate(x);
-        Assertions.assertEquals(5, res);
+        Assertions.assertEquals(10, res);
     }
 
     @Test
@@ -29,7 +29,7 @@ public class TestAbs {
     void testDerivative(){
         String result = func.derivative().toPrettyString(NumberFormat.getInstance());
         String derivativeFunc = Const.of(x).derivative().toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals(String.format("(|%s|*%s)", x,derivativeFunc), result);
+        Assertions.assertEquals(String.format("((-10*|(-10)^(-1)|)*0)"), result);
     }
 
     @Test

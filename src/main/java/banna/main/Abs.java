@@ -7,7 +7,7 @@ import lisna.main.Power;
 
 import java.text.NumberFormat;
 
-class Abs extends Composite {
+public class Abs extends Composite {
     private final Function base;
 
     public Abs(Function base) {

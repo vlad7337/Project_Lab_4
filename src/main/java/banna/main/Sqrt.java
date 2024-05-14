@@ -7,7 +7,7 @@ import lisna.main.Power;
 
 import java.text.NumberFormat;
 
-class Sqrt extends Composite {
+public class Sqrt extends Composite {
     private final Function base;
 
     public Sqrt(Function base) {

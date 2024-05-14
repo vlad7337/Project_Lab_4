@@ -7,7 +7,7 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.StringJoiner;
 
-class Difference extends Composite {
+public class Difference extends Composite {
     public Difference() {
         super();
     }

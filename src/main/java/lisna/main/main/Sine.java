@@ -1,35 +1,37 @@
-package lisna.main;
+package lisna.main.main;
 
 import banna.main.Multiplication;
 import core.main.Composite;
 import core.main.Function;
+import karpenko.main.Cosine;
 
 import java.text.NumberFormat;
 
-public class Absolute extends Composite {
 
-    public Absolute(Function term) {
+public class Sine extends Composite {
+
+    public Sine(Function term) {
         super(term);
     }
 
     @Override
     public double calculate(double x) {
-        return Math.abs(terms().get(0).calculate(x));
+        return Math.sin(terms().get(0).calculate(x));
     }
 
     @Override
     public Function derivative() {
         Function term = terms().get(0);
-        return new Multiplication(Sign.of(term), term.derivative());
+        return Multiplication.of(Cosine.of(term), term.derivative());
     }
 
     @Override
     public String toPrettyString(NumberFormat nf) {
-        return "|"+ terms().get(0).toPrettyString(nf) +"|";
+        return "sin(" + terms().get(0).toPrettyString(nf) + ")";
     }
 
-    public static Absolute of(Function term){
-        return new Absolute(term);
+    public static Sine of(Function term) {
+        return new Sine(term);
     }
 
 }

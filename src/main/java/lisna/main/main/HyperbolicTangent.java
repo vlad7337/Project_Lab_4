@@ -1,4 +1,4 @@
-package lisna.main;
+package lisna.main.main;
 
 import banna.main.Multiplication;
 import banna.main.Sum;
@@ -22,7 +22,7 @@ public class HyperbolicTangent extends Composite {
     @Override
     public Function derivative() {
         Function term = terms().get(0);
-        return new Sum(Const.of(1), Multiplication.of(Const.of(-1),Power.of(HyperbolicTangent.of(term),Const.of(2))));
+        return new Sum(Const.of(1), Multiplication.of(Const.of(-1), Power.of(HyperbolicTangent.of(term),Const.of(2))));
     }
 
     @Override

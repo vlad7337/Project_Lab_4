@@ -1,4 +1,4 @@
-package lisna.main;
+package lisna.main.main;
 
 import banna.main.*;
 import core.main.Composite;

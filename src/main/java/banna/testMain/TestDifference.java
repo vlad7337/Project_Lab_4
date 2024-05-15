@@ -9,30 +9,29 @@ import org.junit.jupiter.api.Test;
 import java.text.NumberFormat;
 
 public class TestDifference {
+    int x = 0;
+    Difference difference = new Difference(Linear.of(10), Const.of(5));
     @Test
     void testCalculate() {
-        Difference difference = new Difference(Const.of(10), Const.of(5));
-        double result = difference.calculate(0);
-        Assertions.assertEquals(5, result);
+        double result = difference.calculate(x);
+        Assertions.assertEquals(-5, result);
     }
 
     @Test
     void testToPrettyString() {
-        Difference difference = new Difference(Linear.X, Const.of(2), Const.of(1));
         String result = difference.toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals("(x-2-1)", result);
+        Assertions.assertEquals("(10*x-5)", result);
     }
 
     @Test
     void testDerivative() {
-        Difference difference = new Difference(Linear.X, Const.of(2), Const.of(1));
         String result = difference.derivative().toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals("(1-0-0)", result);
+        Assertions.assertEquals("(10-0)", result);
     }
 
     @Test
     void testDifferenceOf() {
-        Object result = Difference.of(Linear.X, Const.of(2), Const.of(1));
+        Object result = difference;
         Assertions.assertInstanceOf(Difference.class, result);
     }
 }

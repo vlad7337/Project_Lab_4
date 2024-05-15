@@ -9,30 +9,29 @@ import org.junit.jupiter.api.Test;
 import java.text.NumberFormat;
 
 public class TestSum {
+    int x = 1;
+    Sum sum = new Sum(Linear.of(1), Const.of(2), Const.of(3));
     @Test
     void testCalculate() {
-        Sum sum = new Sum(Const.of(2), Const.of(3), Const.of(4));
-        double result = sum.calculate(0);
-        Assertions.assertEquals(9, result);
+        double result = sum.calculate(x);
+        Assertions.assertEquals(6, result);
     }
 
     @Test
     void testToPrettyString() {
-        Sum sum = new Sum(Linear.X, Const.of(2), Const.of(3));
         String result = sum.toPrettyString(NumberFormat.getInstance());
-        Assertions.assertEquals("(x+2+3)", result);
+        Assertions.assertEquals("(1*x+2+3)", result);
     }
 
     @Test
     void testDerivative() {
-        Sum sum = new Sum(Linear.X, Const.of(2), Const.of(3));
         String result = sum.derivative().toPrettyString(NumberFormat.getInstance());
         Assertions.assertEquals("(1+0+0)", result);
     }
 
     @Test
     void testSumOf() {
-        Object result = Sum.of(Linear.X, Const.of(2), Const.of(3));
+        Object result = sum;
         Assertions.assertInstanceOf(Sum.class, result);
     }
 }
